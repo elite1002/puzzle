@@ -29,8 +29,8 @@ import IconStar from './assets/imgs/icon-star.png';
 import IconBanned from './assets/imgs/icon-banned.png';
 import IconArrow from './assets/imgs/icon-arrow.png';
 
-import { Modal } from "react-responsive-modal";
-import "react-responsive-modal/styles.css";
+import 'bootstrap/dist/css/bootstrap.css';
+import Modal from 'react-bootstrap/Modal';
 
 import { AwesomeButton } from 'react-awesome-button';
 import 'react-awesome-button/dist/styles.css';
@@ -71,23 +71,38 @@ function App() {
           </div>
         </div>
       </div>
-      <Modal open={isModalOpen} onClose={() => setIsModalOpen(false)} styles={{
+
+      <Modal show={isModalOpen} onHide={()=>setIsModalOpen(false)} style={{top: '30%'}}>
+        <Modal.Header closeButton>
+          <Modal.Title>
+            {isSuccess ? 'Success' : 'Failed'}
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <p style={{ fontSize: '1.5rem' }}>
+            {isSuccess ? '🎉Congratelation, your answer is correct.' : 'Your answer is not correct 😋, Please try again'}
+          </p>
+        </Modal.Body>
+        <Modal.Footer>
+          <div className='mt-3' style={{
+            float: 'right'
+          }}>
+            <AwesomeButton type={isSuccess ? "secondary" : "danger"} onPress={() => setIsModalOpen(false)}>{isSuccess ? 'Next' : 'Again'}</AwesomeButton>
+          </div>
+        </Modal.Footer>
+        {/* <Modal open={isModalOpen} onClose={() => setIsModalOpen(false)} styles={{
         modal: {
           borderRadius: 10,
           top: '30%'
         }
-      }}>
-        <div className='my-5'>
+      }}> */}
+        {/* <div className='my-5'>
           <h2>{isSuccess ? 'Success' : 'Failed'}</h2>
-        </div>
-        <p style={{ fontSize: '1.5rem' }}>
+        </div> */}
+        {/* <p style={{ fontSize: '1.5rem' }}>
           {isSuccess ? '🎉Congratelation, your answer is correct.' : 'Your answer is not correct 😋, Please try again'}
-        </p>
-        <div className='mt-3' style={{
-          float: 'right'
-        }}>
-          <AwesomeButton type={isSuccess ? "secondary" : "danger"} onPress={() => setIsModalOpen(false)}>{isSuccess ? 'Next' : 'Again'}</AwesomeButton>
-        </div>
+        </p> */}
+        {/* </Modal> */}
       </Modal>
     </>
   );
@@ -120,7 +135,7 @@ const EachLine = ({ ritems, litems, cases }) => (
       {
         litems !== null ? litems.map((litem, key) => {
           return <img className='shape' src={litem} key={key} alt="item" />
-        }) : <p className='w-full text-center'>?</p>
+        }) : <p className='w-full text-center' style={{ fontSize: '4rem' }}>?</p>
       }
     </div>
   </div>

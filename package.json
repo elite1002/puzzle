@@ -9,6 +9,7 @@
     "bootstrap": "^5.2.3",
     "react": "^18.2.0",
     "react-awesome-button": "^7.0.5",
+    "react-bootstrap": "^2.7.3",
     "react-dom": "^18.2.0",
     "react-modal": "^3.16.1",
     "react-responsive-modal": "^6.4.1",
