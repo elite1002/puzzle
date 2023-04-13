@@ -79,7 +79,7 @@ function App() {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <p style={{ fontSize: '1.5rem' }}>
+          <p style={{ fontSize: '1.5rem !important' }}>
             {isSuccess ? '🎉Congratelation, your answer is correct.' : 'Your answer is not correct 😋, Please try again'}
           </p>
         </Modal.Body>
@@ -99,7 +99,7 @@ function App() {
         {/* <div className='my-5'>
           <h2>{isSuccess ? 'Success' : 'Failed'}</h2>
         </div> */}
-        {/* <p style={{ fontSize: '1.5rem' }}>
+        {/* <p style={{ fontSize: '1.5rem !important' }}>
           {isSuccess ? '🎉Congratelation, your answer is correct.' : 'Your answer is not correct 😋, Please try again'}
         </p> */}
         {/* </Modal> */}
@@ -135,7 +135,7 @@ const EachLine = ({ ritems, litems, cases }) => (
       {
         litems !== null ? litems.map((litem, key) => {
           return <img className='shape' src={litem} key={key} alt="item" />
-        }) : <p className='w-full text-center' style={{ fontSize: '4rem' }}>?</p>
+        }) : <p className='w-full text-center' style={{ fontSize: '4rem !important' }}>?</p>
       }
     </div>
   </div>
