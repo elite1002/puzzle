@@ -75,7 +75,8 @@ function App() {
             <div className='mt-3' style={{
               float: 'right'
             }}>
-              <AwesomeButton type={isSuccess ? "secondary" : "danger"} onPress={() => setIsModalOpen(false)}>Okay</AwesomeButton>
+              <button style={{backgroundColor: '#d63a38', color: 'white', borderRadius: 3}} className='px-3 py-1' onClick={() => setIsModalOpen(false)}>Okay</button>
+              {/* <AwesomeButton type={"danger"} onPress={() => setIsModalOpen(false)}>Okay</AwesomeButton> */}
             </div>
           </Modal.Footer>
         </Modal>
