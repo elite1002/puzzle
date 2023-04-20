@@ -63,7 +63,7 @@ function App() {
         <Modal show={isModalOpen} onHide={() => setIsModalOpen(false)} style={{ top: '30px', maxHeight: '90%' }}>
           <Modal.Header closeButton>
             <Modal.Title>
-              {isSuccess ? 'Success' : 'Failed'}
+              {isSuccess ? 'Good' : 'Wrong'}
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
