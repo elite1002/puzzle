@@ -1,13 +1,13 @@
 @font-face {
-  font-family: 'UnionRegular';
-  src: url('./assets/Union-Regular.otf') format('opentype');
+  font-family: "UnionRegular";
+  src: url("./assets/Union-Regular.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
 
 body {
   margin: 0;
-  font-family: 'UnionRegular', sans-serif !important;
+  font-family: "UnionRegular", sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -62,7 +62,16 @@ p {
   height: 0.5rem;
   background-color: #f9e364;
 }
-
+.custom-max-h {
+  max-height: 50vh;
+}
+.each-decision {
+  width: "20%";
+  max-width: 8rem;
+}
+.header-title{
+  font-size: 2rem;
+}
 @media only screen and (min-width: 768px) {
   body {
     /* font-size: 2rem !important; */
@@ -101,6 +110,21 @@ p {
   }
 
   p {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-width: 1024px){
+  .custom-max-h {
+    max-height: 30vh;
+  }
+
+  .each-decision {
+    width: "20%";
+    max-width: 4.5rem;
+  }
+
+  .header-title {
     font-size: 1.5rem;
   }
 }

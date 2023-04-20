@@ -3,9 +3,6 @@ import Parse from 'parse/dist/parse.min.js';
 import 'bootstrap/dist/css/bootstrap.css';
 import Modal from 'react-bootstrap/Modal';
 
-import { AwesomeButton } from 'react-awesome-button';
-import 'react-awesome-button/dist/styles.css';
-
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -42,10 +39,10 @@ function App() {
       <>
         <div className='w-full h-full flex flex-col p-3 gap-2 justify-evenly md:p-8'>
           <div className=''>
-            <p className='text-center' style={{fontSize: '2rem'}}>{result.attributes?.questionText}</p>
+            <p className='text-center header-title' >{result.attributes?.questionText}</p>
           </div>
           <div className='flex flex-col justify-center items-center'>
-            <img src={result.attributes?.questionImage._url} alt="" style={{ maxHeight: '30vh' }} />
+            <img src={result.attributes?.questionImage._url} alt="" className="custom-max-h"/>
           </div>
           <div className=''>
             <ColoredDivider />
@@ -85,11 +82,8 @@ function App() {
 }
 
 const EachDecision = ({ url, indicator, handleClick }) => (
-  <div className='flex flex-col justify-center items-center relative'
-    style={{
-      width: '20%',
-      maxWidth: '10rem'
-    }} onClick={() => handleClick(indicator)}>
+  <div className='flex flex-col justify-center items-center relative each-decision'
+    onClick={() => handleClick(indicator)}>
     <div className='flex'
     >
       <img src={url} alt=""
