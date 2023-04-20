@@ -45,7 +45,7 @@ function App() {
             <p className='text-center' style={{fontSize: '2rem'}}>{result.attributes?.questionText}</p>
           </div>
           <div className='flex flex-col justify-center items-center'>
-            <img src={result.attributes?.questionImage._url} alt="" style={{ maxHeight: '50vh' }} />
+            <img src={result.attributes?.questionImage._url} alt="" style={{ maxHeight: '30vh' }} />
           </div>
           <div className=''>
             <ColoredDivider />
